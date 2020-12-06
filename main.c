@@ -28,6 +28,7 @@ ssize_t write_syscall(int filedes, const void *buf, size_t count) {
       :"=r"(written_bytes)
       :[filedes]"r"(filedes),[syscall]"r"(syscall),[msg]"r"(buf),[size]"r"(count)
       :"%eax","%edi","%rsi","%rdx","%rax");
+
   return written_bytes;
 }
 
